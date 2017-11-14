@@ -739,7 +739,7 @@ Param(
 
         if ($rmbin) {
             if ($bindep) {
-                Remove-Bindep -Targets $Targets -Module $Module -Bindep $bindep -Credential $Credential
+                Remove-Bindep -Targets $Targets -Bindep $bindep -Credential $Credential
             }
         }
 
@@ -973,8 +973,6 @@ to Enter-PSSession for the host and Remove-Item.
 Param(
     [Parameter(Mandatory=$True,Position=0)]
         [Array]$Targets,
-    [Parameter(Mandatory=$True,Position=1)]
-        [String]$Module,
     [Parameter(Mandatory=$True,Position=2)]
         [String]$Bindep,
     [Parameter(Mandatory=$False,Position=3)]
@@ -1240,7 +1238,7 @@ if ($Analysis) {
 
 # Code to remove binaries from remote hosts
 if ($rmbin) {
-    Remove-Bindep -Targets $Targets -Modules $Modules -Credential $Credential
+    Remove-Bindep -Targets $Targets -Credential $Credential
 }
 # Done removing binaries #
 
